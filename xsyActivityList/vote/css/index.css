@@ -1,0 +1,284 @@
+body {
+	background: rgba(255,255,255,.3);
+	
+}
+
+.page{
+	-webkit-perspective: 400px;
+      perspective: 400px;
+}
+.index {
+	/*display: none;*/
+}
+.main {
+	width:750px;
+	height:1206px;
+	position: absolute;
+	overflow: hidden;
+	/*box-shadow:5px 5px 5px #000;*/
+	/*float: left;*/
+}
+.main-img {
+	width:750px;
+	height:1206px;
+	/*margin:0 auto;*/
+	vertical-align: middle;
+}
+.two-btn {
+	width:690px;
+	height: 100px;
+	/*background-color: pink;*/
+	/*position:fixed;*/
+	overflow: hidden;
+	/*bottom:220px;
+	left:0px;*/
+	padding:0 30px;
+	position:absolute;
+	bottom:120px;
+	left:0px;
+	z-index:100;
+}
+.btn-red {
+	width:300px;
+	height:80px;
+	/*position: absolute;*/
+	background-color: #E20A15;
+	border-radius:18px;
+	box-shadow:0px 0px 60px rgba(0,0,0,.3) inset;
+	text-align: center;
+	line-height: 80px;
+	font-size:44px;
+	font-weight:800;
+	color:#F6F177;
+	text-shadow:3px 3px 2px #999;
+}
+.outer-red {
+	box-shadow:0px 15px 10px rgba(0,0,0,.6);
+	/*overflow: hidden;*/
+	/*position: fixed;*/
+	float: left;
+	width:300px;
+	height:80px;
+	border-radius:18px;
+	transition: all .1s ease;
+}
+.outer-red:active {
+	/*box-shadow:0px 5px 10px rgba(0,0,0,.6);*/
+	/*border:2px solid rgba(0,0,0,.4),0px 3px 6px rgba(0,0,0,.9);*/
+	animation:click 400ms;
+}
+.main .btn-green {
+	background-color: #45DC55;
+	width:300px;
+	height:80px;
+	border-radius:18px;
+	box-shadow:0px 0px 60px rgba(0,0,0,.4) inset;
+	text-align: center;
+	line-height: 80px;
+	font-size:44px;
+	font-weight:800;
+	color:#F6F177;
+	text-shadow:3px 3px 2px #999;
+}
+.main .outer-green {
+	float: right;
+	box-shadow:0px 15px 10px rgba(0,0,0,.6);
+	width:300px;
+	height:80px;
+	border-radius:18px;
+}
+.outer-green:active {
+	/*box-shadow:0px 5px 10px rgba(0,0,0,.6);*/
+	/*border:2px solid rgba(0,0,0,.4);*/
+	animation:click 500ms;
+}
+@keyframes click {
+	0% {
+
+	}
+	50% {
+		transform:translateY(15px);
+		box-shadow:0px 5px 10px rgba(0,0,0,.6);
+	}
+	100% {
+		transform:translateY(-15px);
+		box-shadow:0px 15px 10px rgba(0,0,0,.6);
+	}
+}
+/*投票结果页*/
+.result {
+	 -webkit-transform: rotate3d(1, 0, 0, 90deg);
+          transform: rotate3d(1, 0, 0, 90deg);
+	 display: none;
+	z-index: 100;
+	width:750px;
+	height:1206px;
+	position:absolute;
+	overflow: hidden;
+	top:0;
+	left:0;
+	display:none;
+
+}
+
+.into-bottom {
+	display: block;
+	-webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+          animation-delay:600ms;
+  -webkit-animation: in-bottom 400ms ease 0ms 1 forwards;
+          animation: in-bottom 400ms ease 0ms 1 forwards;
+}
+
+@-webkit-keyframes in-bottom {
+  from {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+@keyframes in-bottom {
+  from {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+  }
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+/*优惠券部分*/
+.cheap-left {
+    width: 330px;
+    height: 175px;
+    position: absolute;
+    left: 40px;
+    bottom: 100px;
+
+}
+/*显示票数部分*/
+.voteNum {
+    width: 690px;
+    height: 150px;
+    position: absolute;
+    left: 40px;
+    top: 680px;
+    /*background-color: pink;*/
+}
+.vote-item-wrapA h4 {
+    color:#fc6633;
+   /* color:#E20A15;*/
+    font-size:36px;
+    margin-top: 20px;
+    font-weight:700;
+    text-shadow: 0 4px #400d06, 4px 0 #400d06, -4px 0 #400d06, 0 -4px #400d06;
+}
+.vote-item-wrapB h4 {
+    color:#63c85b;
+    font-size:36px;
+    font-weight:700;
+    margin-top: 14px;
+    text-shadow: 0 4px #400d06, 4px 0 #400d06, -4px 0 #400d06, 0 -4px #400d06;
+}
+.progress {
+   width:690px;
+    height: 40px;
+   /* border:1px solid red;*/
+    margin-top: 8px; 
+    position: relative;
+    top:0px;
+    left:0px;                                
+}
+
+.progress .content-red {
+    width: 173px;
+    height: 40px;
+    float: left;
+    background-color: #fc6633;
+  /* background-color: #E20A15;*/
+    display: inline-block;
+    line-height: 40px;
+    padding-left: 16px;
+    color:#fff;
+    font-size:22px;
+    font-weight: 200;
+     border-right:2px solid #fc6633;
+	
+
+}
+.progress .content-green {
+    width: 173px;
+    height: 40px;
+    float: left;
+    background-color: #63c85b;
+    display: inline-block;
+    line-height: 40px;
+    padding-left: 16px;
+    color:#fff;
+    font-size:22px;
+    font-weight: 200;
+    border-right:2px solid #63c85b;
+   
+	}
+
+}
+.litem {
+    width:498px;
+    height: 40px;
+    float: left;
+    position: absolute;
+    left: 167px;
+    top:0px;
+   /* background-color: skyblue;*/
+    
+}
+.litem .vote-percent {
+    /*width: 10px;*/
+    height: 40px;
+    /*float: left;*/
+    background-color: #fc6633;
+    display: inline-block;
+    line-height: 40px;
+    color:#fff;
+    font-size:22px;
+    font-weight: 200;
+    /*position: absolute;
+    left:0px;
+    top:0px;*/
+
+}
+.litem .litem-green {
+    background-color: #63c85b;
+}
+
+/*点击出现分享弹窗*/
+.share {
+	width: 750px;
+	height: 1206px;
+	position: absolute;
+	background: rgba(0,0,0,.7);
+	z-index:2000;
+	text-align: center;
+	display: none;
+}
+
+/*音乐播放*/
+/* music */  
+@-webkit-keyframes reverseRotataZ{  
+    0%{-webkit-transform: rotateZ(0deg);}  
+    100%{-webkit-transform: rotateZ(-360deg);}  
+}  
+@-webkit-keyframes rotataZ{  
+    0%{-webkit-transform: rotateZ(0deg);}  
+    100%{-webkit-transform: rotateZ(360deg);}  
+}  
+#musicControl { position:fixed;right:10px;top:20px;margin-top:0;display:inline-block;z-index:99999999}  
+#musicControl a { display:inline-block;width:50px;height:50px;overflow:hidden;background:url('../image/music.png') no-repeat;background-size:100%;}  
+#musicControl a audio{width:100%;height:56px;}  
+#musicControl a.stop { background-position:left bottom;}  
+#musicControl a.on { background-position:0px 1px;-webkit-animation: reverseRotataZ 1.2s linear infinite;}  
+#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}  

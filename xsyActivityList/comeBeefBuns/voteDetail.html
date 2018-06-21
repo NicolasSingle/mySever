@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <title>瓜分10000个泡椒牛肉夹馍</title>
+  <link rel="stylesheet" href="../common/css/base.css?version=3.0.0.2">
+  <link rel="stylesheet" href="./css/index.css?version=3.0.0.1">
+  <link rel="stylesheet" href="./css/voteDetail.css?version=3.0.0.1">
+</head>
+
+<body>
+  <div class="mask">
+    <div class="title">
+      <img src="./image/loading.gif" alt=""><br />
+      <span>努力加载中</span>
+    </div>
+  </div>
+  <img class="top-img" src="./image/detail_bg.jpg" alt="">
+  <div class="vote-detail clearfix">
+    <div class="center-detail">
+      <!--顶部规则-->
+      <div class="center-title"></div>
+      <div class="center-rule-title"><img src="./image/rule_token.png" alt="">
+        <span>忌一时冲动</span>
+      </div>
+      <div class="center-rule-content">加入哪个战队就只能在这个门店领奖</div>
+      <!--战队名称-->
+      <div class="center-content" id="centerContent">
+
+      </div>
+    </div>
+    <!--加入战队按钮-->
+    <div class="vote-btn"><img src="./image/vote_btn.png" alt=""></div>
+    <!--底部规则页面-->
+    <div class="bottom-rule clearfix">
+      <div class="botttom-bg-red">
+        <img class="bottom-rule-title" src="./image/rule_title.png" alt="">
+        <div class="bottom-rule-content">
+          <div class="bottom-rule-smallTitle">【活动时间】</div>
+          <div class="bottom-rule-text">2018.5.18 12:00-5.24 12:00可进行投票，<br />当某一战队率先达到10000人时提前胜出；<br />2018.5.24 12:00发放奖品。</div>
+          <div class="bottom-rule-smallTitle">【领奖方式】</div>
+          <div class="bottom-rule-text">获胜战队成员可以通过公众号直接进入结果页面，领取微信卡券至卡包内；<br /> 该券只能在获胜的战队门店进行兑换；
+            <br /> 每次仅能兑换一个，卡券不可分享；
+            <br /> 卡券有效期为5月25日-6月24日，过期无法使用，请关注公众号结果公布及时领券。
+          </div>
+          <div class="bottom-rule-smallTitle">【瓜分规则】</div>
+          <div class="bottom-rule-text">人气最高（票数最多）的门店战队将胜出，该战队所有成员平分10000个泡椒牛肉夹馍，按照人均个数四舍五入取整。<br /> 例如：
+            <br /> 获胜战队有3500人，则每人获得2.8即3个泡椒牛肉馍；
+            <br /> 获胜战队有4500人，则每人获得2.2即2个泡椒牛肉馍；
+            <br /> 以此类推。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 错误提示弹窗 -->
+  <div class="modal">
+    <div class="modal-title">
+      <div class="modal-content"></div>
+      <div class="modal-button">知道啦</div>
+    </div>
+  </div>
+  <!--投票成功弹窗-->
+  <div class="success-modal">
+    <div class="success-modal-title">
+      <div class="success-modal-content"></div>
+      <div class="success-modal-button">查看投票结果</div>
+    </div>
+  </div>
+  <!--投票中止弹窗-->
+  <div class="prestop-modal">
+    <div class="prestop-modal-title">
+      <div class="prestop-modal-content">人气太旺啦，最强战队已经产生！</div>
+      <div class="prestop-modal-button">知道啦</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../common/script/Wjudge.js"></script>
+  <script type="text/javascript" src="../common/script/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script type="text/javascript" src="../common/script/sha1.js"></script>
+  <script type="text/javascript" src="../common/script/util.js"></script>
+  <script type="text/javascript" src="../common/script/template-web.js"></script>
+  <script src="../common/script/wxShare.js?version=3.0.0.1"></script>
+  <script type="text/javascript" src="./script/voteDetail.js?version=3.0.0.1"></script>
+  <script id="test" type="text/html">
+    {{each list value i}}
+    <div class="content-row">
+      <img class="row-buns-img" src="./image/buns.png" alt="">
+      <span class="row-name-text">{{value.F_FoodName}}</span>
+      <div class="row-selected-img" id={{value.F_Id}}>
+        <img src="./image/selected.png" alt="">
+      </div>
+    </div>
+    {{/each}}
+  </script>
+  <script src="./script/statist.js"></script>
+</body>
+
+</html>

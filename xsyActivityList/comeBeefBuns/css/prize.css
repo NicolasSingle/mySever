@@ -1,0 +1,180 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #191a16;
+}
+
+.prize-bg {
+    width: 718px;
+    height: 998px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -360px;
+}
+
+.prize-bottom-bg {
+    width: 750px;
+    height: 612px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.prize-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/*中奖卡片部分*/
+
+.prize-card {
+    width: 678px;
+    height: 406px;
+    margin: 50px auto 70px;
+    position: relative;
+    text-align: center;
+}
+
+.prize-btn {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    bottom: 55px;
+    right: 101px;
+}
+
+.prize-btn img {
+    width: 123px;
+    height: 46px;
+    margin-top: 30px;
+}
+/*已领取按钮*/
+.noprize-btn {
+    width: 200px;
+    height: 80px;
+    position: absolute;
+    bottom: 55px;
+    right: 101px;
+}
+
+.noprize-btn img {
+    width: 123px;
+    height: 46px;
+    margin-top: 30px;
+}
+.prize-center-text {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 900px;
+    line-height: 54px;
+}
+
+/*底部中奖列表*/
+
+.prize-list {
+    width: 690px;
+    height: 400px;
+    /*background-color: pink;*/
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+}
+
+/*左边列表*/
+
+.prize-list-left {
+    width: 295px;
+    height: 260px;
+    padding: 70px 0px;
+    float: left;
+}
+
+.prize-list-left li {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.prize-list-left li .list-left-name {
+    width: 185px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: left;
+}
+
+.prize-list-left li .list-left-num {
+    width: 105px;
+    height: 50px;
+    line-height: 50px;
+    float: right;
+    text-align: right;
+}
+
+/*右边列表*/
+
+.prize-list-right {
+    width: 350px;
+    height: 400px;
+    float: right;
+    text-align: left;
+}
+
+.list-right-img {
+    width: 350px;
+    height: 109px;
+    margin: 20px 0px 10px;
+}
+
+.list-right-name {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 900;
+    width: 350px;
+    height: 76px;
+    line-height: 76px;
+}
+
+.list-right-name:after {
+    content: " ";
+    display: inline-block;
+    width: 100%;
+}
+
+.list-right-num {
+    font-size: 100px;
+    color: #fff;
+    font-weight: 900;
+    line-height: 100px;
+}
+
+.list-right-num span {
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/*未中奖*/
+
+.no-prize {
+    width: 605px;
+    height: 496px;
+    margin: 80px auto 50px;
+}
+
+.no-prize img {
+    width: 605px;
+    height: 496px;
+}
+.list-right-img-noprize {
+  width:350px;
+  height:134px;
+  margin: 5px 0px 0px;
+}

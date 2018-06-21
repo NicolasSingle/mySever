@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <title>西少爷送《二代妖精》电影票</title>
+  <link rel="stylesheet" href="../../common/css/base.css">
+  <!--  <link rel="stylesheet" href="../css/index.css">   -->
+</head>
+<style>
+  body {
+    /* background: url('../image/card_success.jpg') no-repeat;
+  background-size: cover;*/
+    background-color: #142535;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+  }
+
+  .success-card {
+    width: 475px;
+    height: 90px;
+    box-shadow: 3px 3px 5px #5d9a94;
+    border-radius: 20px;
+    line-height: 94px;
+    text-align: center;
+    background-color: #5d9a94;
+    font-size: 26px;
+    position: absolute;
+    top: 783px;
+    left: 140px;
+    color: #000;
+    vertical-align: middle;
+
+  }
+
+  .success-card img {
+    vertical-align: middle;
+  }
+</style>
+
+<body>
+  <!-- 领取成功页 -->
+  <div class="success">
+    <img src="../image/card_success.jpg" alt="">
+    <div class="success-card"></div>
+  </div>
+
+</body>
+<script src="../../common/script/Wjudge.js"></script>
+<script src="../../common/script/jquery-1.12.1.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../../common/script/sha1.js"></script>
+<script src="../script/util.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script>
+  jQuery(document).ready(function () {
+    if (window.history && window.history.pushState) {
+      $(window).on('popstate', function () {　　　　　　　　　　　　　　　　 /// 当点击浏览器的 后退和前进按钮 时才会被触发， 
+        window.history.pushState('forward', null, '');
+        window.history.forward(1);
+      });
+    }　　　　　　　　　　 //
+    window.history.pushState('forward', null, ''); //在IE中必须得有这两行
+    window.history.forward(1);
+
+    stopDrop();
+    var cardno = requestParam('cardno');
+    $(".success-card").text("兑换码：" + cardno);
+    var domain = "http://activity.xishaoye.com";
+    var title = '西少爷送《二代妖精》电影票';
+    var link = "http://activity.xishaoye.com/Init/InitCardActive";
+    var desc = "粉丝专属，免费抢，手慢无";
+    var imgUrl = domain + '/cardactivity/image/logo.png';
+    var img_width = "200";
+    var img_height = "200";
+    var appkey = 'C7C90874E9A9FDE4';
+    let timestamp = UnixtimeStamp();
+    var page = '/cardactivity/html/result.html';
+    // 页面注册配置
+    var dataConfig = {
+      'page': page + '?cardno=' + cardno
+    };
+    $.ajax({
+      url: domain + '/api/WeiXin/GetWXConfig?appkey=' + appkey + '&timestamp=' + timestamp + '&sign=' +
+        computedSign(dataConfig, "get", timestamp),
+      type: 'get',
+      data: dataConfig,
+      dataType: 'json',
+      success: function (res) {
+        if (res.Code == 0) {
+          wx.config({
+            debug: false,
+            appId: res.Data.appId,
+            timestamp: res.Data.timeStamp,
+            nonceStr: res.Data.nonceStr,
+            signature: res.Data.signature,
+            jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ",
+              "onMenuShareWeibo", "onMenuShareQZone"
+            ]
+          });
+        }
+      }
+    });
+
+    //通过ready接口处理成功验证
+    wx.ready(function () {
+      //基础接口
+      wx.checkJsApi({
+        jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareWeibo",
+          "onMenuShareQZone"
+        ],
+        success: function (res) {
+
+        }
+      });
+
+      // 分享到朋友圈
+      wx.onMenuShareTimeline({
+        title: title,
+        link: link,
+        desc: desc,
+        imgUrl: imgUrl,
+        img_width: img_width,
+        img_height: img_height,
+        success: function () {
+          //用户分享后执行的回调函数
+
+        },
+        cancel: function () {
+          // 用户取消后执行的回调函数
+        }
+      });
+
+      // 分享给朋友
+      wx.onMenuShareAppMessage({
+        title: title,
+        link: link,
+        desc: desc,
+        imgUrl: imgUrl,
+        img_width: img_width,
+        img_height: img_height,
+        success: function () {
+          //用户分享后执行的回调函数
+
+        },
+        cancel: function () {
+          // 用户取消后执行的回调函数
+        }
+      });
+
+      // 分享到QQ
+      wx.onMenuShareQQ({
+        title: title,
+        link: link,
+        desc: desc,
+        imgUrl: imgUrl,
+        img_width: img_width,
+        img_height: img_height,
+        success: function () {
+          //用户分享后执行的回调函数
+        },
+        cancel: function () {
+          // 用户取消后执行的回调函数
+        }
+      });
+      wx.onMenuShareWeibo({
+        title: title,
+        link: link,
+        desc: desc,
+        imgUrl: imgUrl,
+        img_width: img_width,
+        img_height: img_height,
+        success: function () {
+          //用户分享后执行的回调函数
+        },
+        cancel: function () {
+          // 用户取消后执行的回调函数
+        }
+      });
+
+      // 分享到QQ空间
+      wx.onMenuShareQZone({
+        title: title,
+        link: link,
+        desc: desc,
+        imgUrl: imgUrl,
+        img_width: img_width,
+        img_height: img_height,
+        success: function () {
+          //用户分享后执行的回调函数
+        },
+        cancel: function () {
+          // 用户取消后执行的回调函数
+        }
+      });
+    });
+
+
+
+  });
+
+  function configHandle(cardno) {
+
+  }
+</script>
+
+</html>

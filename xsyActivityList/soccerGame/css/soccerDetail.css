@@ -1,0 +1,116 @@
+/*首页*/
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    /*overflow: hidden;*/
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+}
+
+.soccer-detail {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: url('../image/soccerDetail_bg.jpg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.soccer-door {
+    width: 420px;
+    height: 182px;
+    margin-top: 170px;
+}
+
+.soccer-footer {
+   
+    margin-top:170px;
+    width: 750px;
+    height: 680px;
+    text-align:center;
+}
+
+.soccer-jiantou {
+    width: 188px;
+    height: 225px;
+    margin:0 auto;
+}
+
+.soccer-jiantou img {
+    width: 188px;
+    height: 225px;
+  -webkit-animation: soccerJiantou 1s linear infinite;
+  animation: soccerJiantou 1s linear infinite;
+  transform-origin:50% 100%;
+}
+.socccer-football {
+   width:230px;
+   height:239px;
+   margin:20px auto 0px;
+   position:relative;
+}
+.socccer-football img {
+   width:230px;
+   height:239px;
+}
+.socccer-football .fly-football {
+  width:186px;
+  height:199px;
+  position:absolute;
+  left:0px;
+  bottom:40px;
+  display:none;
+}
+.socccer-football .fly-football-small {
+  /*width:90px;
+  height:90px;
+  position:absolute;
+  bottom: 850px;
+  left:330px;*/
+  -webkit-animation: rotateSoccer 100ms linear infinite;
+  animation: rotateSoccer 100ms linear infinite;  
+}
+
+.soccer-text {
+   width:381px;
+   height:108px;
+   margin:0px auto 0px;
+}
+.soccer-text img {
+   width:381px;
+   height:108px;
+   -webkit-animation: soccerText 1s linear infinite;
+   animation: soccerText 1s linear infinite;
+}
+@-webkit-keyframes rotateSoccer{  
+    0%{-webkit-transform: rotateZ(0deg);}  
+    100%{-webkit-transform: rotateZ(360deg);}  
+} 
+@keyframes rotateSoccer{  
+    0%{-webkit-transform: rotateZ(0deg);}  
+    100%{-webkit-transform: rotateZ(360deg);}  
+} 
+@-webkit-keyframes soccerJiantou{  
+    0%{transform:scale(1,1)}  
+    50%{transform:scale(1,0.5)}  
+    100%{transform:scale(1,1)}  
+} 
+@keyframes soccerJiantou{  
+    0%{transform:scale(1,1)}  
+    50%{transform:scale(1,0.5)}  
+    100%{transform:scale(1,1)}  
+} 
+@-webkit-keyframes soccerText{  
+   0%{transform:scale(1,1)}  
+    50%{transform:scale(0.5,0.5)}  
+    100%{transform:scale(1,1)} 
+} 
+@keyframes soccerText{  
+      0%{transform:scale(1,1)}  
+    50%{transform:scale(0.5,0.5)}  
+    100%{transform:scale(1,1)}    
+} 

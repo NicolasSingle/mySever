@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>西少爷送《二代妖精》电影票</title>
+  <link rel="stylesheet" href="../../common/css/base.css">
+  <link rel="stylesheet" href="../css/index.css">     
+</head>
+<body>
+<!-- 首页 -->
+ <div class="home-activity homeTicket">
+    <div class="bottom-home">
+       <img src="../image/bottom.png" alt="">
+        <div class="home-btn" id="btnTicket">点击抢票</div>
+    </div> 
+ </div>
+</body>
+  <script src="../../common/script/Wjudge.js"></script>
+  <script src = "../../common/script/jquery-1.12.1.min.js"></script>    
+  <script src = "http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src = "../../common/script/sha1.js"></script>  
+  <script src = "../script/util.js"></script>  
+ <script>
+ $(function(){
+   stopDrop();
+  var domain = "http://activity.xishaoye.com";
+  var appkey = 'C7C90874E9A9FDE4';
+   //获取时间戳
+    let timestamp = UnixtimeStamp();
+ // status=1---已领完   status=2---地区错误    status=3---没有关注
+       var openid = requestParam('openid');
+         // var openid = 'oQfIG1G-TPLFSx1GDU0ENaAAU0ys';
+   // 点击抢票按钮，进行抢票
+$("#btnTicket").on("click",function(){  
+    // 获取参数
+      var openid = requestParam('openid');
+         // var openid = 'oQfIG1G-TPLFSx1GDU0ENaAAU0ys';
+  // 发放卡券
+        $.ajax({
+          url: domain + '/api/CardManager/SendCard?appkey=' + appkey + '&timestamp=' + timestamp + '&sign=' + computedSign({openId:openid}, "get", timestamp),
+          type: 'get',
+          data:{'openId':openid},
+          async: false,
+          dataType: 'json',
+          success: function (res) {
+           if (res.Code == 0) {
+            var dData = res.Data;
+            var cardno = dData.cardno;
+              location.href = "./result.html?cardno="+cardno;                            
+          }else if(res.Code == 10002){
+            window.location.href = "./error.html?status=1";
+          }else if(res.Code == 10003){
+           window.location.href = "./error.html?status=3";
+         }else if(res.Code == 10001){
+          window.location.href = "./error.html?status=1";
+        }else{
+         window.location.href = "./error.html?status=1";
+       }
+       }
+       });
+});
+
+                  var title = '西少爷送《二代妖精》电影票';
+                  var link = "http://activity.xishaoye.com/Init/InitCardActive";
+                  var desc = "粉丝专属，免费抢，手慢无";
+                  var imgUrl = domain + '/cardactivity/image/logo.png';
+                  var img_width = "200";
+                  var img_height = "200";
+                  var page = '/cardactivity/html/home.html';
+                // 页面注册配置
+                var dataConfig = { 'page': page + '?openid=' + openid};
+                $.ajax({
+                  url: domain + '/api/WeiXin/GetWXConfig?appkey=' + appkey + '&timestamp=' + timestamp + '&sign=' + computedSign(dataConfig, "get", timestamp),
+                  type: 'get',
+                  data: dataConfig,
+                  dataType: 'json',
+                  success: function (res) {
+                    if (res.Code == 0) {
+                      wx.config({
+                        debug: false,
+                        appId: res.Data.appId,
+                        timestamp: res.Data.timeStamp,
+                        nonceStr: res.Data.nonceStr,
+                        signature: res.Data.signature,
+                        jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage","onMenuShareQQ", "onMenuShareWeibo", "onMenuShareQZone"]
+                      }); 
+                    }
+                  }
+                });
+
+
+                //通过ready接口处理成功验证
+  wx.ready(function () {
+    //基础接口
+    wx.checkJsApi({
+      jsApiList: ["onMenuShareTimeline", "onMenuShareAppMessage", "onMenuShareQQ", "onMenuShareWeibo", "onMenuShareQZone"],
+      success: function (res) {
+
+      }
+    });
+
+    // 分享到朋友圈
+    wx.onMenuShareTimeline({
+      title: title,
+      link: link,
+      desc: desc,
+      imgUrl: imgUrl,
+      img_width: img_width,
+      img_height: img_height,
+      success: function () {
+        //用户分享后执行的回调函数
+      },
+      cancel: function () {
+        // 用户取消后执行的回调函数
+      }
+    });
+
+    // 分享给朋友
+    wx.onMenuShareAppMessage({
+      title: title,
+      link: link,
+      desc: desc,
+      imgUrl: imgUrl,
+      img_width: img_width,
+      img_height: img_height,
+      success: function () {
+        //用户分享后执行的回调函数
+      },
+      cancel: function () {
+        // 用户取消后执行的回调函数
+      }
+    });
+
+    // 分享到QQ
+    wx.onMenuShareQQ({
+      title: title,
+      link: link,
+      desc: desc,
+      imgUrl: imgUrl,
+      img_width: img_width,
+      img_height: img_height,
+      success: function () {
+        //用户分享后执行的回调函数
+        
+      },
+      cancel: function () {
+        // 用户取消后执行的回调函数
+      }
+    });
+    wx.onMenuShareWeibo({
+      title: title,
+      link: link,
+      desc: desc,
+      imgUrl: imgUrl,
+      img_width: img_width,
+      img_height: img_height,
+      success: function () {
+        //用户分享后执行的回调函数
+        
+      },
+      cancel: function () {
+        // 用户取消后执行的回调函数
+      }
+    });
+
+    // 分享到QQ空间
+    wx.onMenuShareQZone({
+      title: title,
+      link: link,
+      desc: desc,
+      imgUrl: imgUrl,
+      img_width: img_width,
+      img_height: img_height,
+      success: function () {
+        //用户分享后执行的回调函数
+        
+      },
+      cancel: function () {
+        // 用户取消后执行的回调函数
+      }
+    });
+  });
+
+ })
+
+ </script>
+</html>

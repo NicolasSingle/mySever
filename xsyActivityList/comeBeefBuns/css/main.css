@@ -1,0 +1,67 @@
+body,html {
+  width:100%;
+  height:100%;
+}
+/*错误提示弹窗*/
+.modal-success {
+  width: 100%;
+	height: 100%;
+	position: absolute;	
+	z-index:2000;
+	text-align: center;
+	background: rgba(0,0,0,.7);
+	display:none;
+}
+.modal-success-title {
+  width:480px;
+  height:240px;
+  border-radius:30px;
+  background: #fff;
+  top:50%;
+  left:50%;
+  position:absolute;
+  margin-top:-120px;
+  margin-left:-240px;
+  text-align:center;
+  font-size:28px;
+  color:#333;	
+}
+.modal-success-content {
+	width:480px;
+	height:150px;
+	box-sizing:border-box;
+	padding:40px 40px 20px;
+	line-height:45px;
+}
+.modal-success-button {
+	width:480px;
+	height:88px;
+	border-top:1px solid #D9D9D9;
+	color:#333;
+	font-size:30px;
+	line-height:88px;
+	text-align:center;
+}
+.beef-main {
+  background:url('../image/beef_main.gif') no-repeat;
+  background-size:100% 100%;
+  width:750px;
+  height:100%;
+  position:absolute;
+}
+.toVote-btn {
+  width:352px;
+  height:80px;
+  line-height:80px;
+  text-align:center;
+  background-color:#b02524;
+  color:#fff;
+  border:4px solid #fff;
+  position:fixed;
+  bottom:350px;
+  left:50%;
+  margin-left:-180px;
+  border-radius:15px;
+  font-size:34px;
+  font-weight:500;
+}

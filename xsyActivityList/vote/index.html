@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>胜鸡留，败鸡走</title>
+  <link rel="stylesheet" href="../common/css/base.css">
+  <link rel="stylesheet" href="./css/index.css"> 
+    
+</head>
+<body>
+<div class="page">
+ <div class="main index" id = "showMain">
+    <img src="./image/main.gif" alt="投票主页面" class="main-img">
+    <!-- <img class=" btn-red" src="./image/agree-red.png" id="btnRed"> -->
+    <div class="two-btn">
+    <div data-rippleria class="outer-red"  id="btnRed"><div class=" btn-red">支持他</div></div>
+    <div class="outer-green" id="btnGreen"><div class="btn-green">支持他</div></div>
+    </div>
+    <!-- <img src="./image/agree-green.png" alt="" class="btn-green" id="btnGreen"> -->
+ </div>
+
+ <!-- 投票结果页 -->
+ <div class="main result" id= "showResult">
+    <!-- <img src="./image/red_big.png" alt="投票主页面" class="main-img"> -->
+    <!-- 优惠券 -->
+    <img class="cheap-left" src="./image/card.png" id="cardA">
+    <!-- <img class="cheap-right" src="./image/card_b.png" id="cardB"> -->
+    <ul class="voteNum clearfix" id="appVoteBox">
+    <li class="vl-item" id="voteItem0">
+    <div class="vote-item-wrapA clearfix"> 
+    <h4></h4>
+    <div class="progress">
+    <span class="content-red"></span> 
+    <p class="litem"><span class="vote-percent"></span></p>
+    </div>
+    </div>
+  </li>
+  <li class="vl-item" id="voteItem0">
+    <div class="vote-item-wrapB clearfix"> 
+    <h4></h4> 
+    <div class="progress">
+      <span class="content-green"></span>
+      <p class="litem"><span class="vote-percent litem-green"></span></p>
+      </div>
+    </div>
+  </li>
+    </ul>
+ </div> 
+
+ <!-- 分享遮挡层 -->
+
+ <div class="share">
+  <img src="./image/share.png" alt="">
+ </div>
+<!-- 插入音频 -->
+
+ <span style="font-size:14px;"><span id="musicControl">  
+        <a id="mc_play" class="on" onclick="play_music();">  
+             <audio id="musicfx1">  
+                <source  src="./mp3/music_m.mp3" type="audio/mpeg"> 
+                
+            </audio>  
+            <audio id="musicfx2" >  
+                <source  src="./mp3/music_res.mp3" type="audio/mpeg"> 
+                
+            </audio> 
+            <!-- <source src="./mp3/music_res.mp3" type="audio/mpeg" id = "musicMp3"> -->
+                <!-- <source src="./mp3/music.wav" type="audio/wav" id = "musicWav">
+                <source src="./mp3/music.ogg" type="audio/ogg" id = "musicOgg">  -->
+
+        </a>  
+ </span>
+ </span>  
+ </div>
+</body>
+<script src="../common/script/Wjudge.js"></script>
+    <script src = "../common/script/jquery-1.12.1.min.js"></script>    
+  <script src = "http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src = "../common/script/sha1.js"></script>
+  <script src = "./script/index.js"></script>
+  <script src = "./script/result.js"></script>
+  <script src = "./script/layer_mobile/layer.js"></script>
+<!-- 音乐js部分 -->
+<!-- <span style="font-size:14px;"> --><!-- music -->  
+<script> 
+  document.removeEventListener('WeixinJSBridgeReady'); 
+    function play_music(){  
+        if ($('#mc_play').hasClass('on')){  
+            $('#mc_play audio').get(0).pause();  
+            $('#mc_play').attr('class','stop');  
+        }else{  
+            $('#mc_play audio').get(0).play();  
+            $('#mc_play').attr('class','on');  
+        }  
+        $('#music_play_filter').hide();  
+        event.stopPropagation(); //阻止冒泡  
+    }  
+    function just_play(id){  
+        $('#mc_play audio').get(0).play();  
+        $('#mc_play').attr('class','on');  
+        if (typeof(id)!='undefined'){  
+            $('#music_play_filter').hide();  
+        }  
+        event.stopPropagation(); //阻止冒泡  
+    }  
+    // function is_weixn(){  
+    //     return false;  
+    //     var ua = navigator.userAgent.toLowerCase();  
+    //     if(ua.match(/MicroMessenger/i)=="micromessenger") {  
+    //         return true;  
+    //     } else {  
+    //         return false;  
+    //     }  
+    // }  
+    // var play_filter=document.getElementById('music_play_filter');  
+    // // play_filter.addEventListener('click', function(){  
+    // //     just_play(1);  
+    // // });  
+    // play_filter.addEventListener('touchstart', function(){  
+    //     just_play(1);  
+    // });  
+    // play_filter.addEventListener('touchend', function(){  
+    //     just_play(1);  
+    // });  
+    // play_filter.addEventListener('touchmove', function(){  
+    //     just_play(1);  
+    // });  
+    // play_filter.addEventListener('mousedown', function(){  
+    //     just_play(1);  
+    // });  
+    // play_filter.addEventListener('mouseup', function(){  
+    //     just_play(1);  
+    // });  
+    // play_filter.addEventListener('mousemove',function(){  
+    //     just_play(1);  
+    // });  
+    // window.onload=function(){  
+    //     if (!is_weixn()){  
+    //         just_play();  
+    //     }  
+    // } 
+    </script> 
+<!-- </span> -->   
+</html>

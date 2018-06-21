@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>二代妖精抢票页面</title>
+  <link rel="stylesheet" href="../common/css/base.css">
+  <link rel="stylesheet" href="./css/index.css">     
+</head>
+<body>
+   <div class="loading">
+   <img src="./image/loading.jpg" alt="">
+   </div>
+<!-- 首页 -->
+ <div class="home-activity homeTicket" style="display:none">
+     <div class="bottom-home">
+       <img src="./image/bottom.png" alt="">
+        <div class="home-btn" id="btnTicket">点击抢票</div>
+    </div> 
+ </div>
+ <!-- 领取成功页 -->
+ <div class="home-activity success" style="display:none">
+ <img src="./image/card_success.jpg" alt="">
+ <div class="success-card"></div>
+ </div>
+ <!-- 票数抢完页 -->
+ <div class="complete" style="display:none">
+ 
+ </div>
+
+</body>
+  <script src="../common/script/Wjudge.js"></script>
+  <script src = "../common/script/jquery-1.12.1.min.js"></script>    
+  <script src = "http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src = "../common/script/sha1.js"></script>  
+  <script src = "./script/util.js"></script>  
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+  <script src = "./script/index.js"></script> 
+</html>

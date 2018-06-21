@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <title>瓜分10000个泡椒牛肉夹馍</title>
+  <link rel="stylesheet" href="../common/css/base.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/result.css">
+</head>
+
+<body>
+  <div class="mask">
+    <div class="title">
+      <img src="./image/loading.gif" alt=""><br />
+      <span>努力加载中</span>
+    </div>
+  </div>
+  <!--投票结果页-->
+  <div class="beef-result multiply">
+    <div class="vote-retult-box multiply">
+      <div id="reslutBg"></div>
+      <div class="result-bottom-show clearfix"></div>
+    </div>
+    <!--底部结果-->
+    <img class="beef-all-img" style="position:absolute" src="./image/result_buns.png" alt="">
+    <div class="result-content clearfix">
+      <div id="reslutContent"></div>
+      <div class="result-bottom-content">
+        <div class="result-bottom-left">
+          <img class="result-bottom-left-img" src="./image/result_icon.png" alt="">
+        </div>
+        <div class="result-bottom-right">
+          <div class="result-bottom-text">投票成功<br />请关注后续结果！</div>
+          <div class="result-bottom-share" id="showShareHandle">分享到朋友圈 集结战队成员>></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 错误提示弹窗 -->
+  <div class="modal">
+    <div class="modal-title">
+      <div class="modal-content"></div>
+      <div class="modal-button">知道啦</div>
+    </div>
+  </div>
+
+  <!--分享蒙版-->
+  <div class="share-page">
+   <img src="./image/share_text.png" alt=""> 
+  </div>
+  <script src="../common/script/Wjudge.js"></script>
+  <script src="../common/script/jquery-1.12.1.min.js"></script>
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script src="../common/script/sha1.js"></script>
+  <script src="../common/script/util.js"></script>
+  <script type="text/javascript" src="../common/script/template-web.js"></script>
+  <script src="../common/script/wxShare.js?version=3.0.0.1"></script>
+  <script src="./script/result.js?version=3.0.0.1"></script>
+  <script id="test" type="text/html">
+    {{each list value i}} {{if i==0}}
+    <div class="vote-else-content" style="height:240px">
+      <div class="voted-box-else-content" style="height:240px">
+        <div class="result-vote-all">
+          <div class="result-vote-nameBig">{{value.F_FoodName}}</div>
+          <div class="result-vote-numBig">{{value.sumVote}}<span style="font-size:40px">票</span></div>
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <div class="vote-else-content">
+      <div class="voted-box-else-content">
+        <div class="result-vote-all">
+          <div class="result-vote-name">{{value.F_FoodName}}</div>
+          <div class="result-vote-num"><span>{{value.sumVote}}</span>票</div>
+        </div>
+      </div>
+    </div>
+    {{/if}} {{/each}}
+  </script>
+  <script id="testBg" type="text/html">
+    {{each list value i}} {{if i==0}}
+    <div class="vote-else" style="height:240px;" id="voteItem{{i}}">
+      <div class="voted-box-else" style="height:240px;">
+      </div>
+    </div>
+    {{else}}
+    <div class="vote-else" id="voteItem{{i}}">
+      <div class="voted-box-else">
+      </div>
+    </div>
+    {{/if}} {{/each}}
+  </script>
+  <script src = "./script/statist.js"></script>
+</body>
+
+</html>

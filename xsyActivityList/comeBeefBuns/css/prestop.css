@@ -1,0 +1,93 @@
+body {
+   background:url('../image/all_bg.jpg') repeat-y;
+  background-size:100% auto; 
+  width:100%;
+  height:100%;
+}
+.prestop-img {
+  margin-top:200px;
+}
+.prestop {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+}
+.prestop-title {
+  width:690px;
+  margin:60px auto 54px;
+  border-radius:30px;
+  background:rgba(51,44,44,0.7);
+  overflow:hidden;
+}
+.prestop-title .img {
+  background:url('../image/prestop_text.png') no-repeat;
+  background-size:100% 100%;
+  width:645px;
+  height:300px;
+  margin-left:32px;
+  margin-top:88px;
+}
+/*商品列表*/
+.prestop-numList {
+  width:530px;
+  height:100%;
+  padding:60px 85px 60px 75px;
+}
+.prestop-line {
+ height:80px;
+ line-height:80px;
+ font-size:36px;
+  font-weight:600;
+  font-style:italic ;
+  color:#fff;
+}
+.prestop-line .prestop-name {
+ width:360px; 
+  float:left;
+}
+.prestop-line .prestop-voteNum {
+ float:right;
+ width:165px;
+ text-align:right;
+}
+/*底部规则页面*/
+.bottom-rule {
+  width:688px;
+  position:relative;
+  left:37px;
+  background-color:#b02524;
+  margin-bottom:150px;
+}
+.botttom-bg-red {
+  width:688px;
+  background-color:#fff;
+  position:relative;
+  top:-12px;
+  left:-12px;
+  overflow:hidden;
+  border:1px solid #000;
+  text-align:center;
+}
+.bottom-rule-title {
+  width:264px;
+  height:52px;
+  margin:56px auto 24px;
+}
+.bottom-rule-content {
+  width:618px;
+  padding:0 35px 68px;
+  text-align:left;
+}
+.bottom-rule-smallTitle {
+  font-size:28px;
+  color:#000;
+  font-weight:700;
+  margin:20px 0px;
+}
+.bottom-rule-text {
+  font-size:28px;
+  color:#000;
+  line-height:42px;
+  padding:0px 15px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>西少爷送《二代妖精》电影票</title>
+ <link rel="stylesheet" href="../../common/css/base.css">
+  <link rel="stylesheet" href="../css/index.css">     
+</head>
+<body>
+ <!-- 票数抢完页 -->
+ <div class="complete">
+ $(".complete").html('<img src="../image/complete.png" alt="">')
+ </div>
+</body>
+  <script src="../../common/script/Wjudge.js"></script>
+  <script src = "../../common/script/jquery-1.12.1.min.js"></script>    
+  <!-- <script src = "http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
+  <script src = "../../common/script/sha1.js"></script>  
+  <script src = "../script/util.js"></script>  
+  <script>
+  $(function(){
+    
+     stopDrop();
+    var status = requestParam('status');
+    if(status == 1){
+      $(".complete").html('<img src="../image/complete.png" alt="">')
+    }else if(status == 2){
+       $(".complete").html('<img src="../image/adress.png" alt="">')
+    }else if(status == 3){
+       $(".complete").html('<img src="../image/share.png" alt="">')
+    }
+
+  });
+  </script>
+</html>
